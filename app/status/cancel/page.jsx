@@ -423,17 +423,17 @@ export default function Cancel(p) {
                                   style={{
                                     border: "1px solid gainsboro",
                                     display: "grid",
-                                    gridTemplateColumns:
-                                      window.innerWidth < 600
-                                        ? "130px 100px"
-                                        : "300px 100px",
+                                    gridTemplateColumns: "130px 100px" ,
+                                    // window.innerWidth < 600
+                                    //   ? "130px 100px"
+                                    //   : "300px 100px",
                                     gap: "10px",
                                     alignItems: "center",
                                     borderRadius: "20px",
-                                    justifyContent:
-                                      window.innerWidth < 600
-                                        ? "space-evenly"
-                                        : "center",
+                                    justifyContent: "space-evenly" ,
+                                      // window.innerWidth < 600
+                                      //   ? "space-evenly"
+                                      //   : "center",
                                     paddingLeft: "20px",
                                     margin: "10px 0",
                                     position: "relative",
@@ -974,17 +974,17 @@ export default function Cancel(p) {
                             style={{
                               border: "1px solid gainsboro",
                               display: "grid",
-                              gridTemplateColumns:
-                                window.innerWidth < 600
-                                  ? "130px 100px"
-                                  : "300px 100px",
+                              gridTemplateColumns: "130px 100px" ,
+                              // window.innerWidth < 600
+                              //   ? "130px 100px"
+                              //   : "300px 100px",
                               gap: "10px",
                               alignItems: "center",
                               borderRadius: "20px",
-                              justifyContent:
-                                window.innerWidth < 600
-                                  ? "space-evenly"
-                                  : "center",
+                              justifyContent: "space-evenly" ,
+                                      // window.innerWidth < 600
+                                      //   ? "space-evenly"
+                                      //   : "center",
                               paddingLeft: "20px",
                               margin: "10px 0",
                               position: "relative",

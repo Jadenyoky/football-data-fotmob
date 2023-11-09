@@ -20,19 +20,19 @@ export default function MatchesByDate(p) {
   const [value, setvalue] = useState(moment(p.params.date));
 
   // On Scroll Header Hide and Show ..
-  let w = window.scrollY;
-  window.onscroll = () => {
-    const h = document.querySelector(".dateHeader");
-    if (h) {
-      if (w < window.scrollY && w > window.innerHeight) {
-        h.style.transform = "translateY(-100%)";
-        setopen(false);
-      } else {
-        h.style.transform = "translateY(0)";
-      }
-    }
-    w = window.scrollY;
-  };
+  // let w = window.scrollY;
+  // window.onscroll = () => {
+  //   const h = document.querySelector(".dateHeader");
+  //   if (h) {
+  //     if (w < window.scrollY && w > window.innerHeight) {
+  //       h.style.transform = "translateY(-100%)";
+  //       setopen(false);
+  //     } else {
+  //       h.style.transform = "translateY(0)";
+  //     }
+  //   }
+  //   w = window.scrollY;
+  // };
   return (
     <>
       <title>

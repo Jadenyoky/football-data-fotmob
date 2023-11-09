@@ -18,20 +18,20 @@ export default function Date({ dd }) {
   const [value, setvalue] = useState(moment(dd));
 
   // On Scroll Header Hide and Show ..
-  let w = window.scrollY;
-  window.onscroll = () => {
-    const h = document.querySelector(".dateHeader");
-    const c = document.querySelector(".cal");
-    if (h) {
-      if (w < window.scrollY && w > window.innerHeight) {
-        h.style.transform = "translateY(-100%)";
-        setopen(false);
-      } else {
-        h.style.transform = "translateY(0)";
-      }
-    }
-    w = window.scrollY;
-  };
+  // let w = window.scrollY;
+  // window.onscroll = () => {
+  //   const h = document.querySelector(".dateHeader");
+  //   const c = document.querySelector(".cal");
+  //   if (h) {
+  //     if (w < window.scrollY && w > window.innerHeight) {
+  //       h.style.transform = "translateY(-100%)";
+  //       setopen(false);
+  //     } else {
+  //       h.style.transform = "translateY(0)";
+  //     }
+  //   }
+  //   w = window.scrollY;
+  // };
   return (
     <>
       <div
