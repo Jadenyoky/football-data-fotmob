@@ -50,7 +50,7 @@ export default function MatchesByDate(p) {
           display: "grid",
           gridTemplateColumns: "auto auto auto",
           placeItems: "center",
-          background: "seagreen",
+          background: "#00ff0050",
           color: "white",
           position: "sticky",
           top: "0",
