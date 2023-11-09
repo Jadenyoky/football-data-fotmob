@@ -39,7 +39,7 @@ export default function Date({ dd }) {
           display: "grid",
           gridTemplateColumns: "auto auto auto",
           placeItems: "center",
-          background: "seagreen",
+          background: "teal",
           color: "white",
           position: "sticky",
           top: "0",
