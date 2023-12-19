@@ -36,7 +36,7 @@ export default function Matches(p) {
   const apiMatches = async () => {
     setloading(false);
 
-    const apiA = await axios.request(apiUrl);
+    const apiA = await axios.get(apiUrl);
 
     const filter = apiA.data.leagues.filter((ele) => ele.ccode !== "ISR");
     setresults(filter);
@@ -122,7 +122,7 @@ export default function Matches(p) {
 
   const apiRefresh = async () => {
     // console.log("start refresh");
-    const apiA = await axios.request(apiUrl);
+    const apiA = await axios.get(apiUrl);
     const filter = apiA.data.leagues.filter((ele) => ele.ccode !== "ISR");
     setresults(filter);
 
