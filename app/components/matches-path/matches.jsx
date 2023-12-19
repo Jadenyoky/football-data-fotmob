@@ -26,7 +26,9 @@ export default function Matches(p) {
   const [ls, setls] = useState([]);
   // api matches
   // https://corsproxy.io/?[url]
-  let apiUrl = `https://api.allorigins.win/raw?url=https://www.fotmob.com/api/matches?date=${
+  // https://api.allorigins.win/raw?url=[url]
+  // https://thingproxy.freeboard.io/fetch/[url]
+  let apiUrl = `https://thingproxy.freeboard.io/fetch/https://www.fotmob.com/api/matches?date=${
     p.byDate ? moment(p.byDate).format("YYYYMMDD") : moment().format("YYYYMMDD")
   }`;
 
