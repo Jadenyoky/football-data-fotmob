@@ -33,22 +33,6 @@ export default function MatchDetails({
   // api matches
   let apiUrl = `https://www.fotmob.com/api/leagues?id=${leagueId}`;
 
-  // For Skip Cors - http cors proxy -
-  // const options = {
-  //   method: "POST",
-  //   url: "https://http-cors-proxy.p.rapidapi.com/",
-  //   headers: {
-  //     "content-type": "application/json",
-  //     // Origin: "www.example.com",
-  //     "X-Requested-With": "www.example.com",
-  //     "X-RapidAPI-Key": "4671c42cb7msh6e8cb86d8de0650p17acf2jsn5d10db751fd7",
-  //     "X-RapidAPI-Host": "http-cors-proxy.p.rapidapi.com",
-  //   },
-  //   data: {
-  //     url: apiUrl,
-  //   },
-  // };
-
   // For Skip Cors - cors proxy -
   const optionsAlter = {
     method: "GET",

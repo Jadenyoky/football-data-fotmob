@@ -26,7 +26,8 @@ export default function Cancel(p) {
   const [searchcontent, setsearchcontent] = useState(false);
   const [ls, setls] = useState([]);
   // api matches
-  let apiUrl = `https://corsproxy.io/?https://www.fotmob.com/api/matches?date=${
+  // https://corsproxy.io/?[url]
+  let apiUrl = `https://api.allorigins.win/raw?url=https://www.fotmob.com/api/matches?date=${
     p.searchParams.date
       ? moment(p.searchParams.date).format("YYYYMMDD")
       : moment().format("YYYYMMDD")
@@ -423,17 +424,17 @@ export default function Cancel(p) {
                                   style={{
                                     border: "1px solid gainsboro",
                                     display: "grid",
-                                    gridTemplateColumns: "130px 100px" ,
+                                    gridTemplateColumns: "130px 100px",
                                     // window.innerWidth < 600
                                     //   ? "130px 100px"
                                     //   : "300px 100px",
                                     gap: "10px",
                                     alignItems: "center",
                                     borderRadius: "20px",
-                                    justifyContent: "space-evenly" ,
-                                      // window.innerWidth < 600
-                                      //   ? "space-evenly"
-                                      //   : "center",
+                                    justifyContent: "space-evenly",
+                                    // window.innerWidth < 600
+                                    //   ? "space-evenly"
+                                    //   : "center",
                                     paddingLeft: "20px",
                                     margin: "10px 0",
                                     position: "relative",
@@ -974,17 +975,17 @@ export default function Cancel(p) {
                             style={{
                               border: "1px solid gainsboro",
                               display: "grid",
-                              gridTemplateColumns: "130px 100px" ,
+                              gridTemplateColumns: "130px 100px",
                               // window.innerWidth < 600
                               //   ? "130px 100px"
                               //   : "300px 100px",
                               gap: "10px",
                               alignItems: "center",
                               borderRadius: "20px",
-                              justifyContent: "space-evenly" ,
-                                      // window.innerWidth < 600
-                                      //   ? "space-evenly"
-                                      //   : "center",
+                              justifyContent: "space-evenly",
+                              // window.innerWidth < 600
+                              //   ? "space-evenly"
+                              //   : "center",
                               paddingLeft: "20px",
                               margin: "10px 0",
                               position: "relative",

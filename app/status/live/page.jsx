@@ -26,7 +26,8 @@ export default function Live(p) {
   const [searchcontent, setsearchcontent] = useState(false);
   const [ls, setls] = useState([]);
   // api matches
-  let apiUrl = `https://corsproxy.io/?https://www.fotmob.com/api/matches?date=${
+  // https://corsproxy.io/?[url]
+  let apiUrl = `https://api.allorigins.win/raw?url=https://www.fotmob.com/api/matches?date=${
     p.searchParams.date
       ? moment(p.searchParams.date).format("YYYYMMDD")
       : moment().format("YYYYMMDD")

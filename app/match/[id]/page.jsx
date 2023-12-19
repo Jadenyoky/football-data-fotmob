@@ -15,17 +15,17 @@ export default function Match(p) {
   let apiUrl = `https://www.fotmob.com/api/matchDetails?matchId=${p.params.id}`;
   
   // For Skip Cors - cors proxy -
-  const optionsAlter = {
-    method: "GET",
-    url: "https://cors-proxy4.p.rapidapi.com/",
-    params: {
-      url: apiUrl,
-    },
-    headers: {
-      "X-RapidAPI-Key": "4671c42cb7msh6e8cb86d8de0650p17acf2jsn5d10db751fd7",
-      "X-RapidAPI-Host": "cors-proxy4.p.rapidapi.com",
-    },
-  };
+  // const optionsAlter = {
+  //   method: "GET",
+  //   url: "https://cors-proxy4.p.rapidapi.com/",
+  //   params: {
+  //     url: apiUrl,
+  //   },
+  //   headers: {
+  //     "X-RapidAPI-Key": "4671c42cb7msh6e8cb86d8de0650p17acf2jsn5d10db751fd7",
+  //     "X-RapidAPI-Host": "cors-proxy4.p.rapidapi.com",
+  //   },
+  // };
 
   const apiMatcheDetails = async () => {
     setloading(false);
