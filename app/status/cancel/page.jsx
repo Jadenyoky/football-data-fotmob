@@ -29,7 +29,7 @@ export default function Cancel(p) {
   // https://corsproxy.io/?[url]
   // https://api.allorigins.win/raw?url=[url]
   // https://thingproxy.freeboard.io/fetch/[url]
-  let apiUrl = `https://thingproxy.freeboard.io/fetch/https://www.fotmob.com/api/matches?date=${
+  let apiUrl = `https://api.allorigins.win/get?url=https://www.fotmob.com/api/matches?date=${
     p.searchParams.date
       ? moment(p.searchParams.date).format("YYYYMMDD")
       : moment().format("YYYYMMDD")
@@ -39,9 +39,12 @@ export default function Cancel(p) {
   const apiMatches = async () => {
     setloading(false);
 
-    const apiA = await axios.request(apiUrl);
+    const apiA = await axios.get(apiUrl);
 
-    const filter = apiA.data.leagues.filter((ele) => ele.ccode !== "ISR");
+    const j = JSON.parse(apiA.data.contents);
+    console.log(j);
+
+    const filter = j.leagues.filter((ele) => ele.ccode !== "ISR");
     // setresults(filter);
 
     // All Matches
@@ -135,8 +138,12 @@ export default function Cancel(p) {
 
   const apiRefresh = async () => {
     // console.log("start refresh");
-    const apiA = await axios.request(apiUrl);
-    const filter = apiA.data.leagues.filter((ele) => ele.ccode !== "ISR");
+    const apiA = await axios.get(apiUrl);
+
+    const j = JSON.parse(apiA.data.contents);
+    console.log(j);
+
+    const filter = j.leagues.filter((ele) => ele.ccode !== "ISR");
     // setresults(filter);
 
     // All Matches

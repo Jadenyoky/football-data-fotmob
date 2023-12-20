@@ -28,17 +28,21 @@ export default function Matches(p) {
   // https://corsproxy.io/?[url]
   // https://api.allorigins.win/raw?url=[url]
   // https://thingproxy.freeboard.io/fetch/[url]
-  let apiUrl = `https://thingproxy.freeboard.io/fetch/https://www.fotmob.com/api/matches?date=${
+  let apiUrl = `https://api.allorigins.win/get?url=https://www.fotmob.com/api/matches?date=${
     p.byDate ? moment(p.byDate).format("YYYYMMDD") : moment().format("YYYYMMDD")
   }`;
 
   const control = useRef();
+
   const apiMatches = async () => {
     setloading(false);
 
     const apiA = await axios.get(apiUrl);
 
-    const filter = apiA.data.leagues.filter((ele) => ele.ccode !== "ISR");
+    const j = JSON.parse(apiA.data.contents);
+    console.log(j);
+
+    const filter = j.leagues.filter((ele) => ele.ccode !== "ISR");
     setresults(filter);
 
     if (control.current.value !== "") {
@@ -123,7 +127,11 @@ export default function Matches(p) {
   const apiRefresh = async () => {
     // console.log("start refresh");
     const apiA = await axios.get(apiUrl);
-    const filter = apiA.data.leagues.filter((ele) => ele.ccode !== "ISR");
+
+    const j = JSON.parse(apiA.data.contents);
+    console.log(j);
+
+    const filter = j.leagues.filter((ele) => ele.ccode !== "ISR");
     setresults(filter);
 
     if (control.current.value !== "") {
