@@ -29,19 +29,31 @@ export default function Cancel(p) {
   // https://corsproxy.io/?[url]
   // https://api.allorigins.win/raw?url=[url]
   // https://thingproxy.freeboard.io/fetch/[url]
-  let apiUrl = `https://api.allorigins.win/get?url=https://www.fotmob.com/api/matches?date=${
+  let apiUrl = `https://www.fotmob.com/api/matches?date=${
     p.searchParams.date
       ? moment(p.searchParams.date).format("YYYYMMDD")
       : moment().format("YYYYMMDD")
   }`;
 
+  const options = {
+    method: "GET",
+    url: "https://cors-proxy4.p.rapidapi.com/",
+    params: {
+      url: apiUrl,
+    },
+    headers: {
+      "X-RapidAPI-Key": "4671c42cb7msh6e8cb86d8de0650p17acf2jsn5d10db751fd7",
+      "X-RapidAPI-Host": "cors-proxy4.p.rapidapi.com",
+    },
+  };
+
   const control = useRef();
   const apiMatches = async () => {
     setloading(false);
 
-    const apiA = await axios.get(apiUrl);
+    const apiA = await axios.request(options);
 
-    const j = JSON.parse(apiA.data.contents);
+    const j = apiA.data;
     console.log(j);
 
     const filter = j.leagues.filter((ele) => ele.ccode !== "ISR");
@@ -138,9 +150,9 @@ export default function Cancel(p) {
 
   const apiRefresh = async () => {
     // console.log("start refresh");
-    const apiA = await axios.get(apiUrl);
+    const apiA = await axios.request(options);
 
-    const j = JSON.parse(apiA.data.contents);
+    const j = apiA.data;
     console.log(j);
 
     const filter = j.leagues.filter((ele) => ele.ccode !== "ISR");
